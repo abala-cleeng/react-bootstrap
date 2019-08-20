@@ -44,6 +44,14 @@ class Button extends React.Component {
   renderButton({ componentClass, ...elementProps }, className) {
     const Component = componentClass || 'button';
 
+    if (Component === 'span') {
+      return (
+        <Component
+          {...elementProps}
+          className={className}
+        />
+      );
+    }
     return (
       <Component
         {...elementProps}
